@@ -29,7 +29,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return showFlags.reduce(0, { (res, flag) -> Int in res + (flag ? 1 : 0) })
     }
 
-    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         setUserDefaults()
         setNotifications()
@@ -114,7 +113,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         nixieChars.removeLast()
         
-        button?.image = NixieImage.createNixie(from: nixieChars, isDark)
+        button?.image = NixieImage.createNixie(from: nixieChars)
     }
     
     @objc func receiveSleepNote() {
@@ -143,14 +142,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSApp.activate(ignoringOtherApps: true)
         NSApp.orderFrontStandardAboutPanel(nil)
     }
-    
-    var isDark: Bool {
-        if #available(OSX 10.14, *) {
-            guard let name = button?.effectiveAppearance.bestMatch(from: [.aqua, .darkAqua, .vibrantDark]) else { return true }
-            return name.rawValue.lowercased().contains("dark")
-        } else {
-            return true
-        }
-    }
+
 }
 

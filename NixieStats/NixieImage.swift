@@ -30,15 +30,12 @@ enum NixieChar: String {
 
 class NixieImage {
 
-    static func createNixie(from nixies: [NixieChar], _ isDark: Bool) -> NSImage {
+    static func createNixie(from nixies: [NixieChar]) -> NSImage {
         let width: CGFloat = 23.0 * CGFloat(nixies.count)
         let image = NSImage(size: NSSize(width: width, height: 36.0))
         image.lockFocus()
         for n in (0 ..< nixies.count) {
-            var name = "nixie_" + nixies[n].rawValue
-            if nixies[n] != .clear {
-                name += (isDark ? "_dark" : "_light")
-            }
+            let name = "nixie_" + nixies[n].rawValue
             let nixie = NSImage(imageLiteralResourceName: name)
             nixie.draw(in: NSRect(x: 23.0 * CGFloat(n), y: 0.0, width: 23.0, height: 36.0))
         }
