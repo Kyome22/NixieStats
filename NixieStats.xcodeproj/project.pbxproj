@@ -7,13 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1CA694482370363C00F8CBD3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA694472370363C00F8CBD3 /* Extensions.swift */; };
 		1CF93133236EB96600C774C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF93132236EB96600C774C3 /* AppDelegate.swift */; };
 		1CF93137236EB96900C774C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CF93136236EB96900C774C3 /* Assets.xcassets */; };
 		1CF9313A236EB96900C774C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CF93138236EB96900C774C3 /* Main.storyboard */; };
 		1CF93145236EBED800C774C3 /* NixieImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF93144236EBED800C774C3 /* NixieImage.swift */; };
+		1CF93147236F3AF800C774C3 /* CPU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF93146236F3AF800C774C3 /* CPU.swift */; };
+		1CF93149236F3B0500C774C3 /* Disk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF93148236F3B0500C774C3 /* Disk.swift */; };
+		1CF9314B236F3B1000C774C3 /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF9314A236F3B1000C774C3 /* Memory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1CA694472370363C00F8CBD3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		1CF9312F236EB96600C774C3 /* NixieStats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NixieStats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CF93132236EB96600C774C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1CF93136236EB96900C774C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -21,6 +26,9 @@
 		1CF9313B236EB96900C774C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1CF9313C236EB96900C774C3 /* NixieStats.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NixieStats.entitlements; sourceTree = "<group>"; };
 		1CF93144236EBED800C774C3 /* NixieImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NixieImage.swift; sourceTree = "<group>"; };
+		1CF93146236F3AF800C774C3 /* CPU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPU.swift; sourceTree = "<group>"; };
+		1CF93148236F3B0500C774C3 /* Disk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disk.swift; sourceTree = "<group>"; };
+		1CF9314A236F3B1000C774C3 /* Memory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,8 +61,12 @@
 		1CF93131236EB96600C774C3 /* NixieStats */ = {
 			isa = PBXGroup;
 			children = (
+				1CA694472370363C00F8CBD3 /* Extensions.swift */,
 				1CF93132236EB96600C774C3 /* AppDelegate.swift */,
 				1CF93144236EBED800C774C3 /* NixieImage.swift */,
+				1CF93146236F3AF800C774C3 /* CPU.swift */,
+				1CF93148236F3B0500C774C3 /* Disk.swift */,
+				1CF9314A236F3B1000C774C3 /* Memory.swift */,
 				1CF93136236EB96900C774C3 /* Assets.xcassets */,
 				1CF93138236EB96900C774C3 /* Main.storyboard */,
 				1CF9313B236EB96900C774C3 /* Info.plist */,
@@ -133,8 +145,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CF93149236F3B0500C774C3 /* Disk.swift in Sources */,
+				1CA694482370363C00F8CBD3 /* Extensions.swift in Sources */,
 				1CF93133236EB96600C774C3 /* AppDelegate.swift in Sources */,
 				1CF93145236EBED800C774C3 /* NixieImage.swift in Sources */,
+				1CF9314B236F3B1000C774C3 /* Memory.swift in Sources */,
+				1CF93147236F3AF800C774C3 /* CPU.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,7 +218,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -256,7 +272,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -272,6 +288,7 @@
 				CODE_SIGN_ENTITLEMENTS = NixieStats/NixieStats.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1.0.0;
 				DEVELOPMENT_TEAM = VJ5N2X84K8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = NixieStats/Info.plist;
@@ -292,6 +309,7 @@
 				CODE_SIGN_ENTITLEMENTS = NixieStats/NixieStats.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1.0.0;
 				DEVELOPMENT_TEAM = VJ5N2X84K8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = NixieStats/Info.plist;
