@@ -19,3 +19,7 @@ extension NSMenuItem {
         self.state = isShow ? NSControl.StateValue.on : NSControl.StateValue.off
     }
 }
+
+extension NSColor {
+    static let url = NSColor(named: NSColor.Name("urlColor"))!
+}

@@ -8,6 +8,15 @@
 
 import Darwin
 
+struct MemoryInfo {
+    var indicator: String = "M00.0%"
+    var percentage: String = "Memory: 0.0%"
+    var pressure: String = "pressure: 0.0%"
+    var app: String = "app: 0.0 GB"
+    var wired: String = "wired: 0.0 GB"
+    var compressed: String = "compressed: 0.0 GB"
+}
+
 class Memory {
     
     private let gigaByte: Double = 1073741824
@@ -41,7 +50,8 @@ class Memory {
         return data
     }
     
-    func current() -> String {
+    func current() -> MemoryInfo {
+        let maxMem = maxMemory
         let load = vmStatistics64()
 
         let active      = Double(load.active_count) * Double(PAGE_SIZE) / gigaByte
@@ -52,11 +62,17 @@ class Memory {
         let purgeable   = Double(load.purgeable_count) * Double(PAGE_SIZE) / gigaByte
         let external    = Double(load.external_page_count) * Double(PAGE_SIZE) / gigaByte
         
-        let using = active + inactive + speculative + wired + compressed - purgeable - external
-        
-        let value = min(99.9, round(1000.0 * using / maxMemory) / 10.0)
-        
-        return "M" + String(format: "%04.1f", value) + "%"
+        let using       = active + inactive + speculative + wired + compressed - purgeable - external
+        let value       = min(99.9, round(1000.0 * using / maxMem) / 10.0)
+        let pressure    = 100.0 * (wired + compressed) / maxMem
+        let app         = using - wired - compressed
+            
+        return MemoryInfo(indicator: String(format: "M%04.1f%%", value),
+                          percentage: "Memory: \(value)%",
+                          pressure: "pressure: \(round(10.0 * pressure) / 10.0)%",
+                          app: "app: \(round(10.0 * app) / 10.0)%",
+                          wired: "wired: \(round(10.0 * wired) / 10.0)%",
+                          compressed: "compressed: \(round(10.0 * compressed) / 10.0)%")
     }
     
 }

@@ -30,7 +30,49 @@
                 </application>
                 <menu id="KBK-JW-Z8G">
                     <items>
-                        <menuItem title="Settings" id="ezn-zV-gD4">
+                        <menuItem title="System Info" id="EVU-Y6-tv1">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <menu key="submenu" title="System Info" id="xgC-PQ-hJt">
+                                <items>
+                                    <menuItem title="Item" id="Vxa-Bt-G1H">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="Item" tag="1" id="Mvy-A7-qR3">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="Item" tag="2" id="9P8-r4-61e">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="Item" tag="3" id="msM-fR-jIZ">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem isSeparatorItem="YES" tag="-1" id="97B-Gx-Sta"/>
+                                    <menuItem title="Item" tag="4" id="I17-zF-sjO">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="Item" tag="5" id="jnK-B2-eG5">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="Item" tag="6" id="dq5-2o-lZG">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="Item" tag="7" id="F7b-9c-4Hz">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="Item" tag="8" id="x2x-CI-Zg2">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem isSeparatorItem="YES" tag="-1" id="6I5-Q5-ZUr"/>
+                                    <menuItem title="Item" tag="9" id="ARF-Ub-gow">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="Item" tag="10" id="cAS-oZ-LIM">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                </items>
+                            </menu>
+                        </menuItem>
+                        <menuItem title="Settings" tag="1" id="ezn-zV-gD4">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <menu key="submenu" title="Settings" id="jh4-AF-gnB">
                                 <items>
@@ -46,10 +88,11 @@
                                 </items>
                             </menu>
                         </menuItem>
-                        <menuItem title="About NixieStats" tag="1" id="aPk-rw-nFY">
+                        <menuItem isSeparatorItem="YES" id="ALN-Ek-81z"/>
+                        <menuItem title="About NixieStats" tag="2" id="aPk-rw-nFY">
                             <modifierMask key="keyEquivalentModifierMask"/>
                         </menuItem>
-                        <menuItem title="Quit NixieStats" tag="2" id="O6j-wk-Jt1">
+                        <menuItem title="Quit NixieStats" tag="3" id="O6j-wk-Jt1">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
                                 <action selector="terminate:" target="Ady-hI-5gd" id="QaF-ma-dyJ"/>

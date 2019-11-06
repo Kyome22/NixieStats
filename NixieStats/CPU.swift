@@ -8,6 +8,14 @@
 
 import Darwin
 
+struct CPUInfo {
+    var indicator: String = "C00.0%"
+    var percentage: String = "CPU: 0.0%"
+    var system: String = "system: 0.0%"
+    var user: String = "user: 0.0%"
+    var idle: String = "idle: 0.0%"
+}
+
 class CPU {
     
     private let loadInfoCount: mach_msg_type_number_t!
@@ -30,7 +38,7 @@ class CPU {
         return data
     }
     
-    func current() -> String {
+    func current() -> CPUInfo {
         let load = hostCPULoadInfo()
         let userDiff = Double(load.cpu_ticks.0 - loadPrevious.cpu_ticks.0)
         let sysDiff  = Double(load.cpu_ticks.1 - loadPrevious.cpu_ticks.1)
@@ -40,9 +48,13 @@ class CPU {
         let totalTicks = sysDiff + userDiff + idleDiff + niceDiff
         let sys  = 100.0 * sysDiff / totalTicks
         let user = 100.0 * userDiff / totalTicks
-        
+        let idle = 100.0 * idleDiff / totalTicks
         let value: Double = min(99.9, round((sys + user) * 10.0) / 10.0)
-        return "C" + String(format: "%04.1f", value) + "%"
+        return CPUInfo(indicator: String(format: "C%04.1f%%", value),
+                       percentage: "CPU: \(value)%",
+                       system: "system: \(round(10.0 * sys) / 10.0)%",
+                       user: "user: \(round(10.0 * user) / 10.0)%",
+                       idle: "idle: \(round(10.0 * idle) / 10.0)%")
     }
     
 }
