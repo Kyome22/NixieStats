@@ -82,9 +82,9 @@ class Memory {
         return MemoryInfo(indicator: String(format: "M%04.1f%%", value),
                           percentage: "Memory: \(value)%",
                           pressure: "pressure: \(round(10.0 * pressure) / 10.0)%",
-                          app: "app: \(round(10.0 * app) / 10.0)%",
-                          wired: "wired: \(round(10.0 * wired) / 10.0)%",
-                          compressed: "compressed: \(round(10.0 * compressed) / 10.0)%")
+                          app: "app: \(round(10.0 * app) / 10.0) GB",
+                          wired: "wired: \(round(10.0 * wired) / 10.0) GB",
+                          compressed: "compressed: \(round(10.0 * compressed) / 10.0) GB")
     }
     
 }
